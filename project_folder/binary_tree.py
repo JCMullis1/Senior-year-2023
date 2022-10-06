@@ -1,7 +1,8 @@
 class Node:
     def __init__(self, data):
-        self.searched = False
-        self.parent = None
+        self.visited = False
+        self.explored = False
+        self.prev = None
         self.left = None
         self.right = None
         self.data = data
@@ -21,6 +22,15 @@ class Node:
                 self.right = Node(data)
             else:
                 self.right.insert(data)
+
+    def BFS(self):
+        pass
+
+    def DFS(self):
+        pass
+
+    def binary_search(self):
+        pass
 
 
 root = Node('g')
