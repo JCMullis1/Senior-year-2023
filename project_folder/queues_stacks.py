@@ -18,15 +18,17 @@ def edit(stack):
         edit(stack)
     return stack
 
+
 class Node:
     def __init__(self, value):
         self.value = value
+        self.prev = None
         self.next = None
-
 
     def insert(self, new_value):
         if self.next is None:
             self.next = Node(new_value)
+            self.next.prev = self
             return
 
         self.next.insert(new_value)
@@ -35,6 +37,7 @@ class Node:
         print(self.value)
         if self.next is not None:
             self.next.show()
+
 
     def stack(self):
         pass
@@ -45,8 +48,9 @@ class Node:
 
 # edit(arr)
 
-firstNode = Node(1)
-firstNode.insert(2)
-firstNode.insert(3)
+firstNode = Node(10)
+firstNode.insert(6)
+firstNode.insert(9)
 firstNode.insert(5)
+firstNode.insert(19)
 firstNode.show()
