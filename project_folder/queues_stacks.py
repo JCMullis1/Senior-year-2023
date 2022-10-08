@@ -24,6 +24,14 @@ class Node:
         self.value = value
         self.prev = None
         self.next = None
+        self.last = None
+
+    def find_last(self, firstnode):
+        if self.next is None:
+            firstnode.last = self
+        else:
+            self.next.find_last(firstnode)
+
 
     def insert(self, new_value):
         if self.next is None:
@@ -37,7 +45,6 @@ class Node:
         print(self.value)
         if self.next is not None:
             self.next.show()
-
 
     def stack(self):
         pass
@@ -53,4 +60,7 @@ firstNode.insert(6)
 firstNode.insert(9)
 firstNode.insert(5)
 firstNode.insert(19)
+firstNode.insert(88)
+firstNode.insert(99)
 firstNode.show()
+
